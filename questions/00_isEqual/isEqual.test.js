@@ -17,6 +17,7 @@ describe('isEqual compares 2 objects to see if they are equal', () => {
   });
 
   test('it returns false for objects with different keys and values', () => {
+    debugger;
     expect(isEqual({ a: 2 }, { a: 1 })).toBe(false);
   });
 

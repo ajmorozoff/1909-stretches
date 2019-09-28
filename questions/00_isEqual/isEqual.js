@@ -1,8 +1,17 @@
 function isEqual(obj1, obj2) {
-  // write your function here
-  // run your tests by running `jest isEqual`
-  // you can also run tests on every save by running
-  // `jest --watch isEqual`
+  let answer = true;
+  if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+    answer = false;
+    return answer;
+  }
+  Object.keys(obj1).forEach(key => {
+    if (obj1[key] !== obj2[key]) {
+      answer = false;
+    }
+  })
+
+  return answer;
+
 }
 
 module.exports = { isEqual };
