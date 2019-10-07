@@ -44,6 +44,20 @@ const items = [
 //       price: 4,
 //   }]
 
-function query(arr, obj) {}
+function query(arr, obj) {
+  return arr.filter(ob => {
+    let match = false;
+    Object.keys(obj).forEach(key => {
+      if (obj[key] === ob[key]) {
+        match = true;
+      }
+      else {
+        match = false;
+      }
+    })
+    return match;
+  })
+
+}
 
 module.exports = { query, items };
