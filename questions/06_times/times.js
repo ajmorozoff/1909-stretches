@@ -1,14 +1,9 @@
 function times(n) {
-    try {
-        if (typeof n != 'number') {
-            throw 'Numbers only!';
-        }
-        return function(m) {
-            return m * n;
-        }
+    if (typeof n != 'number') {
+        throw 'Numbers only!';
     }
-    catch (e) {
-        return e;
+    return function(m) {
+        return m * n;
     }
 }
 
