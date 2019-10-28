@@ -17,7 +17,6 @@ class DiceRoller {
     let count = this.total;
     while (count > 0) {
       let roll = Math.ceil(Math.random() * this.sides);
-      //console.log(roll);
       rolls.push(roll);
       --count;
     }
@@ -27,7 +26,6 @@ class DiceRoller {
 
 
 }
-
 
 
 module.exports = { DiceRoller };
