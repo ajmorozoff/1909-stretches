@@ -8,17 +8,16 @@
 
 const floydsTriangle = n => {
     let arr = [];
-    let sum = 0;
-    for (let i = 1; i <= n; i++) {
-        let str = '';
-        for (let j = 1; j <= i; j++) {
-            str += (++sum).toString();
+    let sum = 1;
+    for (let i = 0; i < n; i++) {
+        let row = [];
+        for (let j = 0; j <= i; j++) {
+            row.push(sum);
+            sum += 1;
         }
-        str += '\n';
-        console.log(str);
-        arr.push(str);
+        arr.push(row.join(''));
     }
-    return arr.join('');
+    return arr.join('\n');
 };
 
 module.exports = { floydsTriangle };
