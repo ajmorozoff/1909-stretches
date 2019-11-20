@@ -5,9 +5,18 @@
 class StatefulThing {
   constructor(initialState = {}) {
     this.state = initialState;
+    this.history = [];
   }
-  setState() {
+
+  setState(stateObj) {
     // YOUR CODE
+    this.history.push(this.state);
+    this.state = {...this.state, ...stateObj};
+    return this.state;
+  }
+
+  goBack() {
+    this.state = {...this.state, ...this.history.pop()};
   }
 }
 
