@@ -1,3 +1,4 @@
+/* eslint-disable no-extend-native */
 // create an array method called "next" that console.logs
 // the next index in the array when called.
 
@@ -15,5 +16,13 @@
 // ****no test writing required on this stretch
 
 // YOUR CODE (intentionally blank):
+Array.prototype.nextClbk = () => {
+    let i = 0;
+    return function() {
+        console.log(this[i]);
+        i++;
+    }
+}
 
+Array.prototype.next = Array.prototype.nextClbk();
 // no export statement required
